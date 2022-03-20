@@ -25,3 +25,4 @@ test_sort(10, insertion_sort)
 
 # best in O(n^2) algorithm
 # perform better in small dataset 
+# incremental

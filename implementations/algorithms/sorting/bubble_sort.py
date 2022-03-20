@@ -22,6 +22,7 @@ def bubble_sort(arr):
                 arr[i - 1], arr[i] = arr[i], arr[i - 1]
                 isSwapped = True
 
+
 def bubble_sort_v1(arr):
     n = len(arr)
     isSwapped = True
@@ -36,3 +37,5 @@ def bubble_sort_v1(arr):
 
 test_sort(10, bubble_sort)
 test_sort(10, bubble_sort_v1)
+
+# better than selection sort
