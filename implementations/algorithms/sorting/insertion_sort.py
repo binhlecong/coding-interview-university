@@ -1,3 +1,16 @@
+from random import randint
+
+def test_sort(size, sort):
+    ans = []
+    while size > 0:
+        ans.append(randint(0, 200))
+        size -= 1
+    print('>>>', sort.__name__)
+    print('Before:\t', ans)
+    sort(ans)
+    print('After:\t', ans)
+
+
 def insertion_sort(arr):
     n = len(arr)
     for i in range(1, n):
@@ -8,9 +21,7 @@ def insertion_sort(arr):
             j -= 1
         arr[j + 1] = key
 
+test_sort(10, insertion_sort)
 
-arr = [12, 234, 34, 3, 23, 4, -23, 123]
-print(arr)
-
-insertion_sort(arr)
-print(arr)
+# best in O(n^2) algorithm
+# perform better in small dataset 
