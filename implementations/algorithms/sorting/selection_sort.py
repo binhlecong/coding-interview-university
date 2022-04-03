@@ -23,3 +23,6 @@ def selection_sort(arr):
 
 
 test_sort(10, selection_sort)
+
+# Idea: select the smallest element in the unsorted zone and put it at the front of the unsorted zone
+# the worst

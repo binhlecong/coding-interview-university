@@ -38,4 +38,5 @@ def bubble_sort_v1(arr):
 test_sort(10, bubble_sort)
 test_sort(10, bubble_sort_v1)
 
+# Idea: swap 2 adjacent elements iof they are not in right order until no more pair need to be swapped
 # better than selection sort
