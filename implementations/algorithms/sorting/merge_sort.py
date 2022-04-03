@@ -17,15 +17,13 @@ def merge_sort(arr):
         return
     n = len(arr)
     mid = n // 2
-
+    # Sort 2 halves
     left = arr[:mid]
     right = arr[mid:]
-
     merge_sort(left)
     merge_sort(right)
-
+    # Merge 2 halves
     i = j = k = 0
-
     while i < len(left) and j < len(right):
         if left[i] < right[j]:
             arr[k] = left[i]
@@ -34,12 +32,10 @@ def merge_sort(arr):
             arr[k] = right[j]
             j += 1
         k += 1
-
     while i < len(left):
         arr[k] = left[i]
         i += 1
         k += 1
-
     while j < len(right):
         arr[k] = right[j]
         j += 1
