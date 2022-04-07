@@ -1,3 +1,4 @@
+# https://www.hackerrank.com/challenges/count-luck/problem?isFullScreen=true
 #!/bin/python3
 
 import math
