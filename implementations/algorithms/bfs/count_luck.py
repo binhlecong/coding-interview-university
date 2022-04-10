@@ -1,5 +1,5 @@
 # https://www.hackerrank.com/challenges/count-luck/problem?isFullScreen=true
-#!/bin/python3
+# pass 4/8
 
 import math
 import os
@@ -107,5 +107,3 @@ if __name__ == '__main__':
         k = int(input().strip())
         result = countLuck(matrix, k)
         print(result)
-
-# pass 4/8
