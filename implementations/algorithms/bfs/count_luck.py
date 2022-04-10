@@ -58,6 +58,7 @@ def countLuck(matrix, k):
                 cells.append((nextCell[0], nextCell[1]))
                 cells.clear()
                 break
+    # Trace back path
     decision = 0
     finishX = trace[finishX][finishY][0]
     finishY = trace[finishX][finishY][1]
