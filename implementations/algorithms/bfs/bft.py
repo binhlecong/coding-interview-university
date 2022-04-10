@@ -1,4 +1,5 @@
 from collections import defaultdict
+import queue
 
 
 class Graph:
@@ -11,18 +12,20 @@ class Graph:
         if self._isDirected:
             self.graph[v].append(u)
 
-    def dfsUtil(self, v, visited):
-        visited.add(v)
-        print(v, end=' ')
-        for neighbour in self.graph[v]:
-            if neighbour not in visited:
-                self.dfsUtil(neighbour, visited)
-
-    def dft(self, start):
+    def bft(self, start):
         # O(V + E), V is the number of vertices, E is the number of edges
         # If graph is connected, only need to start from a vertex
         visited = set()
-        self.dfsUtil(start, visited)
+        vertice_queue = []
+        visited.add(start)
+        vertice_queue.append(start)
+        while len(vertice_queue) != 0:
+            current = vertice_queue.pop(0)
+            print(current, end=' ')
+            for neighbor in self.graph[current]:
+                if neighbor not in visited:
+                    visited.add(neighbor)
+                    vertice_queue.append(neighbor)
 
 
 g = Graph()
@@ -32,4 +35,4 @@ g.addEdge(1, 2)
 g.addEdge(2, 0)
 g.addEdge(2, 3)
 g.addEdge(3, 3)
-g.dft(2)
+g.bft(2)
