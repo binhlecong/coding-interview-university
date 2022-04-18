@@ -20,33 +20,22 @@ import sys
 def pylons(k, arr):
     n = len(arr)
     start = 0
-    end = k - 1
-    curr = end
     ans = 0
-    while curr < n:
-        if arr[curr] == 0:
-            hasPlace = False
-            for j in range(start, end):
-                if arr[j if j < n else (n - 1)] == 1:
-                    start = j + 1
-                    end = j + 2 * (k - 1) + 1
-                    curr = end if end < n else (n - 1)
+    while start < n:
+        curr = start + k - 1
+        found = False
+        while curr > start - k + 1 and curr >= 0:
+            if curr < len(arr):
+                if arr[curr] == 1:
                     ans += 1
-                    if start >= n:
-                        break
-                    hasPlace = True
+                    start = curr + k
+                    found = True
                     break
-            if not hasPlace:
-                return -1
-        else:
-            start = curr + 1
-            end = curr + 2 * (k - 1) + 1
-            curr = end if end < n else (n - 1)
-            ans += 1
-            if start >= n:
-                break
+            curr -= 1
+        if not found:
+            return -1
     return ans
-
+            
 
 if __name__ == '__main__':
     first_multiple_input = input().rstrip().split()

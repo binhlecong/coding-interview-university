@@ -19,15 +19,15 @@ import sys
 
 def pylons(k, arr):
     ans = 0
-    i = 0
-    while i < len(arr):
+    start = 0
+    while start < len(arr):
         found = False
-        j = i + k - 1
-        while j >= i - k + 1 and j >= 0:
+        j = start + k - 1
+        while j >= start - k + 1 and j >= 0:
             if j < len(arr):
                 if arr[j] == 1:
                     ans += 1
-                    i = j + k
+                    start = j + k
                     found = True
                     break
             j -= 1
