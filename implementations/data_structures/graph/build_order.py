@@ -1,3 +1,5 @@
+# https://vnoi.info/wiki/algo/graph-theory/topological-sort.md
+
 topo = []
 visited = {}
 graph = {
