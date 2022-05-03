@@ -1,5 +1,6 @@
 from itertools import permutations
 
+
 def bstToArrays(root):
     arrs = [[root.data]]
     s1 = [root]
@@ -27,4 +28,3 @@ def bstToArrays(root):
             pre = arrs.pop(0)
             for perm in perms:
                 arrs.append(pre + perm)
-
